@@ -40,6 +40,7 @@ create_symlink "$DOTFILES_DIR/.config/nvim" "$HOME/.config/nvim" "$REPLACED_DIR/
 create_symlink "$DOTFILES_DIR/.config/tmux" "$HOME/.config/tmux" "$REPLACED_DIR/.config/tmux"
 create_symlink "$DOTFILES_DIR/.local/scripts" "$HOME/.local/scripts" "$REPLACED_DIR/.local/scripts"
 create_symlink "$DOTFILES_DIR/.ssh" "$HOME/.ssh" "$REPLACED_DIR/.ssh"
+create_symlink "$DOTFILES_DIR/.blerc" "$HOME/.blerc" "$REPLACED_DIR/.blerc"
 
 if grep -q WSL /proc/version; then
     echo "WSL environment detected, keeping specific scripts"
@@ -55,7 +56,7 @@ install_nvim_appimage() {
         echo "Downloading Neovim AppImage..."
         mkdir -p "$HOME/.local/bin"
         curl -L https://github.com/neovim/neovim/releases/download/stable/nvim.appimage -o "$HOME/.local/bin/nvim"
-        chmod +x "$HOME/.local/bin/nvim.appimage"
+        chmod +x "$HOME/.local/bin/nvim"
         ln -s "$HOME/.local/bin/nvim" "$HOME/.local/bin/vim"
         echo "Neovim AppImage installed (linked to vim)"
     else

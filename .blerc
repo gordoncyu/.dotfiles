@@ -1,0 +1,3 @@
+# completion
+ble-bind -m 'auto_complete' -f 'C-y' 'auto_complete/insert-on-end'
+
